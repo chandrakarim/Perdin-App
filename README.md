@@ -1,13 +1,13 @@
 🧳 Aplikasi Perjalanan Dinas (Perdin)
 
-Aplikasi ini digunakan untuk mengelola data perjalanan dinas pegawai secara digital — mulai dari pengajuan, perhitungan jarak otomatis antar kota (menggunakan Google Maps Distance Matrix API), hingga proses persetujuan (approve/reject) oleh bagian SDM (Sumber Daya Manusia).
+Aplikasi ini digunakan untuk mengelola data perjalanan dinas pegawai secara digital mulai dari pengajuan, perhitungan jarak otomatis antar kota (menggunakan fungsi Helpers), hingga proses persetujuan (approve/reject) oleh bagian SDM (Sumber Daya Manusia).
 
 Dibangun menggunakan Laravel 10, aplikasi ini dirancang dengan sistem autentikasi multi-role (Admin, SDM, Pegawai), keamanan tinggi, serta antarmuka responsif berbasis Blade Template.
 
 🚀 Fitur Utama
 👤 Role & Hak Akses
 
-- Admin: Mengelola data pegawai dan master data (kota, provinsi, pulau, koordinat).
+- Admin: Mengelola data pegawai dan master data kota (kota, provinsi, pulau, koordinat).
 
 - Pegawai: Membuat dan mengajukan perjalanan dinas (Perdin).
 
@@ -17,7 +17,7 @@ Dibangun menggunakan Laravel 10, aplikasi ini dirancang dengan sistem autentikas
 
 Input data perjalanan:
 
--Kota asal dan tujuan
+- Kota asal dan tujuan
 
 - Maksud perjalanan
 
@@ -25,7 +25,7 @@ Input data perjalanan:
 
 Hitung otomatis:
 
-- Jarak antar kota (km) menggunakan Google Maps Distance Matrix API
+- Jarak antar kota (km) menggunakan fungsi Helpers
 
 - Durasi hari perjalanan
 
@@ -48,28 +48,20 @@ Form input disediakan dengan tampilan ikon modern dan validasi real-time.
 
 Validasi input berbasis Form Request.
 
-Sanitasi konten menggunakan HTMLPurifier.
-
-Perlindungan reCAPTCHA pada form publik.
-
-Header CSP (Content Security Policy) untuk mencegah XSS/Injection.
-
-Rate limiting API untuk keamanan endpoint.
-
 Login dan autentikasi menggunakan Laravel UI dengan Bootstrap.
 
 🧰 Teknologi yang Digunakan
-Komponen	Deskripsi
-Framework	Laravel 10
-Database	MySQL 
-Frontend  Laravel Breeze	+ Blade Template + Bootstrap 5
+
+Komponen	Deskripsi Framework	Laravel 10
+Database	MySQL Frontend  Laravel Breeze	+ Blade Template + Bootstrap 5
 Autentikasi	laravel/ui
 Library Tanggal	Carbon
 Icons	Boxicons + Bootstrap Icons
 
 ⚙️ Instalasi dan Konfigurasi
 1. Clone Repositori
-git clone https://github.com/username/perdin-app.git
+git clone https://github.com/chandrakarim/Perdin-App.git
+
 cd perdin-app
 
 2. Instal Dependensi
@@ -83,16 +75,14 @@ Salin file .env.example menjadi .env
 cp .env.example .env
 
 
-Lalu sesuaikan konfigurasi database dan API key:
-
-APP_NAME="Aplikasi Perjalanan Dinas"
-APP_URL=http://localhost:8000
+Lalu sesuaikan konfigurasi database:
 
 DB_DATABASE=perdin_db
+
 DB_USERNAME=root
+
 DB_PASSWORD=
 
-GOOGLE_MAPS_API_KEY=YOUR_API_KEY
 
 4. Migrasi Database
 php artisan migrate --seed
@@ -129,6 +119,9 @@ SDM Login
 
 - Bisa langsung Approve atau menambahkan catatan lalu Reject.
 
+- Melihat laporan perjalanan dinas.
+
+
 
 Admin Login
 
@@ -136,33 +129,73 @@ Admin Login
 
 - Mengelola user (pegawai/SDM/Admin).
 
-- Melihat laporan perjalanan dinas.
 
-🗂️ Struktur Folder Penting
-app/
- ├── Http/
- │   ├── Controllers/
- │   │   ├── Admin/
- │   │   │   └── CityController.php
- │   │   ├── SdmController.php
- │   │   └── PerdinController.php
- │   └── Middleware/
- ├── Models/
- │   ├── User.php
- │   ├── Perdin.php
- │   └── City.php
+# Struktur Folder Proyek Perdin Laravel
 
-resources/
- ├── views/
- │   ├── admin/
- │   │   └── data_kota/create.blade.php
- │   ├── sdm/
- │   │   └── dashboard.blade.php
- │   └── perdin/
- │       └── create.blade.php
- └── layouts/
-     ├── master.blade.php
-     ├── navbar.blade.php
-     ├── menu.blade.php
-     └── footer.blade.php
+📁 **app/**
+- 📁 Http/
+  - 📁 Controllers/
+    - 📁 Admin/
+      - 📄 CityController.php
+    - 📁 Pegawai/
+      - 📄 PerdinController.php
+    - 📁 Sdm/
+      - 📄 SdmController.php
+    - 📄 AdminDashboardController.php
+  - 📁 Middleware/
+- 📁 Models/
+  - 📄 User.php
+  - 📄 Perdin.php
+  - 📄 City.php
+- 📁 Helpers/
+  - 📄 PerdinHelper.php
+
+📁 **resources/**
+- 📁 views/
+  - 📁 admin/
+    - 📁 data_kota/
+      - 📄 create.blade.php
+      - 📄 edit.blade.php
+      - 📄 index.blade.php
+    - 📁 data_user/
+      - 📄 create.blade.php
+      - 📄 edit.blade.php
+      - 📄 index.blade.php
+  - 📁 sdm/
+    - 📄 dashboard.blade.php
+    - 📄 history.blade.php
+  - 📁 pegawai/
+    - 📁 perdin/
+      - 📄 create.blade.php
+- 📁 layouts/
+  - 📄 master.blade.php
+  - 📄 navbar.blade.php
+  - 📄 menu.blade.php
+  - 📄 footer.blade.php
+
+📁 **routes/**
+- 📄 web.php
+
+📁 **database/**
+- 📁 migrations/
+  - 📄 create_users_table.php
+  - 📄 create_perdins_table.php
+  - 📄 create_cities_table.php
+- 📁 seeders/
+  - 📄 CitySeeder.php
+  - 📄 UserSeeder.php
+
+
+
+📁 **public/**
+- 📁 css/
+- 📁 js/
+- 📁 images/
+
+📄 .env  
+📄 composer.json  
+📄 package.json  
+📄 artisan  
+📄 README.md
+
 
