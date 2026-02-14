@@ -48,13 +48,13 @@ No	Nama Kota	Provinsi	Pulau	Luar Negeri	Latitude	Longitude
 
 Form input disediakan dengan tampilan ikon modern dan validasi real-time.
 
-🧱 Keamanan
+### 🧱 Keamanan
 
-Validasi input berbasis Form Request.
+- Validasi input berbasis Form Request.
 
-Login dan autentikasi menggunakan Laravel UI dengan Bootstrap.
+- Login dan autentikasi menggunakan Laravel UI dengan Bootstrap.
 
-🧰 Teknologi yang Digunakan
+### 🧰 Teknologi yang Digunakan
 
 Komponen	Deskripsi Framework	Laravel 10
 Database	MySQL Frontend  Laravel Breeze	+ Blade Template + Bootstrap 5
@@ -207,4 +207,20 @@ Akses di: http://localhost:8000
 📄 artisan  
 📄 README.md
 
+---
+
+# 👨‍💻 Author
+
+Nama : (Chandra Karim)
+Project : Ujian / Technical Test - Aplikasi Perjalanan Dinas (Perdin)
+
+---
+## Example Dashboard Data Kota
+![Dashboard_admin](https://raw.githubusercontent.com/chandrakarim/Perdin-App/main/Dashboard_admin.png)
+
+## Example Dashboard History Pengajuan Perjalanan Dinas
+![Dashboard_sdm](https://raw.githubusercontent.com/chandrakarim/Perdin-App/main/Dashboard_sdm.png)
+
+## Example Dashboard Data Perdin
+![Dashboard_pegawai](https://raw.githubusercontent.com/chandrakarim/Perdin-App/main/Dashboard_pegawai.png)
 
