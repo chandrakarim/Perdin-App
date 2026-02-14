@@ -215,12 +215,12 @@ Nama : (Chandra Karim)
 Project : Ujian / Technical Test - Aplikasi Perjalanan Dinas (Perdin)
 
 ---
-## Example Dashboard Data Kota
+## Example Dashboard Admin Data Kota
 ![Dashboard_admin](https://raw.githubusercontent.com/chandrakarim/Perdin-App/main/Dashboard_admin.png)
 
-## Example Dashboard History Pengajuan Perjalanan Dinas
+## Example Dashboard SDM History Pengajuan Perjalanan Dinas
 ![Dashboard_sdm](https://raw.githubusercontent.com/chandrakarim/Perdin-App/main/Dashboard_sdm.png)
 
-## Example Dashboard Data Perdin
+## Example Dashboard Pegawai Data Perdin
 ![Dashboard_pegawai](https://raw.githubusercontent.com/chandrakarim/Perdin-App/main/Dashboard_pegawai.png)
 
