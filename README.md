@@ -1,19 +1,20 @@
-🧳 Aplikasi Perjalanan Dinas (Perdin)
-
+## 🧳 Aplikasi Perjalanan Dinas (Perdin)
+---
 Aplikasi ini digunakan untuk mengelola data perjalanan dinas pegawai secara digital mulai dari pengajuan, perhitungan jarak otomatis antar kota (menggunakan fungsi Helpers), hingga proses persetujuan (approve/reject) oleh bagian SDM (Sumber Daya Manusia).
 
 Dibangun menggunakan Laravel 10, aplikasi ini dirancang dengan sistem autentikasi multi-role (Admin, SDM, Pegawai), keamanan tinggi, serta antarmuka responsif berbasis Blade Template.
 
-🚀 Fitur Utama
-👤 Role & Hak Akses
+---
+### 🚀 Fitur Utama
+### 👤 Role & Hak Akses
 
 - Admin: Mengelola data pegawai dan master data kota (kota, provinsi, pulau, koordinat).
 
 - Pegawai: Membuat dan mengajukan perjalanan dinas (Perdin).
 
 - SDM: Melihat daftar pengajuan pending, memeriksa detail, lalu melakukan approve atau reject melalui modal interaktif.
-
-📍 Fitur Perjalanan Dinas
+---
+### 📍 Fitur Perjalanan Dinas
 
 Input data perjalanan:
 
@@ -22,8 +23,9 @@ Input data perjalanan:
 - Maksud perjalanan
 
 - Tanggal mulai dan berakhir
+---
 
-Hitung otomatis:
+### Hitung otomatis:
 
 - Jarak antar kota (km) menggunakan fungsi Helpers
 
@@ -34,13 +36,15 @@ Hitung otomatis:
 - Format tanggal otomatis dengan Carbon → 12 Okt 2025 – 15 Okt 2025 (4 hari)
 
 - Tabel data responsif dengan tampilan yang rapi dan terformat.
-
-🧭 Manajemen Data Kota
+---
+### 🧭 Manajemen Data Kota
 
 Admin dapat menambah dan mengedit daftar kota dengan atribut:
 
 No	Nama Kota	Provinsi	Pulau	Luar Negeri	Latitude	Longitude
 1	Yogyakarta	D.I.Yogyakarta Jawa	Tidak	-7.7972	110.3688
+
+---
 
 Form input disediakan dengan tampilan ikon modern dan validasi real-time.
 
@@ -58,51 +62,56 @@ Autentikasi	laravel/ui
 Library Tanggal	Carbon
 Icons	Boxicons + Bootstrap Icons
 
+---
 ⚙️ Instalasi dan Konfigurasi
-1. Clone Repositori
+### 1. Clone Repositori
+~~~bash
 git clone https://github.com/chandrakarim/Perdin-App.git
 
 cd perdin-app
-
-2. Instal Dependensi
+~~~
+### 2. Instal Dependensi
+~~~bash
 composer install
 npm install && npm run dev
-
-3. Setup Environment
+~~~
+### 3. Setup Environment
 
 Salin file .env.example menjadi .env
-
+~~~bash
 cp .env.example .env
-
+~~~
 
 Lalu sesuaikan konfigurasi database:
-
+~~~bash
 DB_DATABASE=perdin_db
 
 DB_USERNAME=root
 
 DB_PASSWORD=
+~~~
 
-
-4. Migrasi Database
+### 4. Migrasi Database
+~~~bash
 php artisan migrate --seed
-
+~~~
 
 Seeder akan membuat:
 
-Role default (Admin, SDM, Pegawai)
+- Role default (Admin, SDM, Pegawai)
 
 Contoh user dan data kota
 
-5. Jalankan Server
+### 5. Jalankan Server
+~~~bash
 php artisan serve
-
+~~~
 
 Akses di: http://localhost:8000
 
 👨‍💼 Alur Penggunaan
 
-Pegawai Login
+### Pegawai Login
 
 - Membuat pengajuan perjalanan dinas.
 
@@ -111,7 +120,7 @@ Pegawai Login
 - Sistem menghitung otomatis jarak & uang saku.
 
 
-SDM Login
+### SDM Login
 
 - Melihat daftar pengajuan pending.
 
@@ -123,7 +132,7 @@ SDM Login
 
 
 
-Admin Login
+### Admin Login
 
 - Menambah data kota baru melalui form input.
 
